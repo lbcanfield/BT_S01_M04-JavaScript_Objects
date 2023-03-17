@@ -33,7 +33,6 @@ function createMenuItem(name, price, category) {
      return menuItem;
 }
 
-// console.log(createMenuItem('tacos', 8, 'Lunch'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -45,6 +44,7 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+console.log(createMenuItem('pizza', 5, 'lunch'));
 
 
 
@@ -65,10 +65,19 @@ const burger = {
      name: "Burger",
      price: 18,
      category: "Lunch",
-
+     discount: (type) => {
+          if (type === 'teacher' || type === 'student') {
+               return burger.price - burger.price * 0.25;
+          }
+          else {
+               return burger.price - burger.price * 0.10;
+          }
+     },
 }
 
-
+// console.log(burger.discount('teacher'));
+// console.log(burger.discount('student'));
+// console.log(burger.discount('public'));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
